@@ -17,7 +17,6 @@ class BaseMinifier(sublime_plugin.TextCommand):
         self.settings = sublime.load_settings('Minifier.sublime-settings')
 
     def run(self, edit):
-
         selections = self.get_selections()
         CompilerCall = self.get_minifier()
 
@@ -27,7 +26,6 @@ class BaseMinifier(sublime_plugin.TextCommand):
             threads = []
             for sel in selections:
                 selbody = self.view.substr(sel)
-
                 thread = CompilerCall(
                             sel,
                             selbody,
